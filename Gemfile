@@ -10,8 +10,10 @@ end
 gem 'rails', '~> 5.0.1'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'mysql2', '~> 0.3.13'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -30,13 +32,13 @@ gem 'faker'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
+  gem 'faker'
   gem 'pry-rails'
 end
 
 group :test do
   gem "factory_bot_rails", "~> 4.0"
   gem 'shoulda-matchers', '~> 3.1'
-  gem 'faker'
   gem 'database_cleaner'
   gem 'coveralls', require: false
 end
