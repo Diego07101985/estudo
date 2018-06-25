@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   scope module: :v2, constraints: ApiVersion.new('v2') do
     resources :todos, only: :index
     resources :articles, only: :index
+    resources :animes ,only: [:show, :index] , param: :slug
   end
 
 

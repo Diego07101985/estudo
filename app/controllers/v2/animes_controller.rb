@@ -1,10 +1,23 @@
 module V2
     class AnimesController < ApplicationController
+        @@animais = {
+        'cachorro' => {
+          'especie': 'canina',
+          'raca': 'mastiff'
+        }, 
+        
+        'gato' => {
+            'especie': 'felino',
+            'raca': 'asinino'
+        }
+    }
         def index
-            @articles = [
-            { id: 123, name: 'The Things' }
-            ]
-            json_response(@articles)
+            json_response(@@animais)
         end
+
+        def show 
+            @valor = @@animais[params[:slug]]
+            json_response(@valor)
+        end 
     end
 end
